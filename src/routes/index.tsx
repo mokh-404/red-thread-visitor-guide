@@ -6,7 +6,7 @@ import interiorImage from "@/assets/coastal-interior.jpg";
 import exhibitionImage from "@/assets/exhibition-hall.jpg";
 import venueImage from "@/assets/convention-venue.jpg";
 import { Button } from "@/components/ui/button";
-import { PageIntro, Reveal, SiteLayout } from "@/components/SiteLayout";
+import { Reveal, SiteLayout } from "@/components/SiteLayout";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -91,7 +91,7 @@ function Index() {
                 { title: "Hospitality fit-out", image: exhibitionImage, detail: "Solutions for hotels and stays." },
                 { title: "Complete solutions", image: interiorImage, detail: "From property handover to ready for life." },
               ].map((sector, index) => (
-                <Reveal key={sector.title} className="sector-card" styleName={`sector-card-${index + 1}`}>
+                <Reveal key={sector.title} className={`sector-card sector-card-${index + 1}`}>
                   <img src={sector.image} alt="" width={1600} height={1024} loading="lazy" />
                   <div className="sector-card-copy"><span>0{index + 1}</span><h3>{sector.title}</h3><p>{sector.detail}</p><ArrowUpRight aria-hidden="true" /></div>
                 </Reveal>
@@ -134,7 +134,6 @@ function Index() {
           </div>
           <img src={coastImage} alt="The Mediterranean coast at New Alamein" width={1920} height={1024} loading="lazy" />
         </section>
-        <PageIntro className="home-bottom-note" index="02" title="A meeting point for a changing market" description="Connecting property owners, investors, developers and hospitality professionals with the brands that make spaces complete." />
       </main>
     </SiteLayout>
   );
