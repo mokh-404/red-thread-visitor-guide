@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Site structure
+
+- Keep the public experience in file-based TanStack routes, with shared navigation and page framing in `src/components/SiteLayout.tsx`, so every page retains consistent navigation and metadata remains route-specific.
